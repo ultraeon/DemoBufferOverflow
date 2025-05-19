@@ -1,4 +1,3 @@
-// Online C compiler to run C program online
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -22,10 +21,9 @@ char* getTextFromAsset(uint8_t *asset) {
 }
 
 int main() {
-    //char filename[] = "malicious_asset.txt";
-    //uint8_t asset[200];
-    //loadAsset(filename, asset);
-    uint8_t asset[] = {0x00, 0x00, 'h', 'i', ' ', 't', 'h', 'e', 'r', 'e', ' ', ' ', 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x00};
+    char filename[] = "malicious_asset.txt";
+    uint8_t asset[200];
+    loadAsset(filename, asset);
     char *string = getTextFromAsset(asset);
     printf(string);
     return 0;
