@@ -11,10 +11,9 @@ void loadAsset(char filename[], uint8_t assetBuffer[]) { // vulnerable dummy fun
 }
 
 char* getTextFromAsset(uint8_t *asset) {
-    // address 0-1 store size
     char* text = malloc(21); // bad practice yippee
     for(int i = 0; i < 20; i++) {
-        text[i] = asset[i+2]; // thankfully chars are 1 byte as well
+        text[i] = asset[i]; // thankfully chars are 1 byte as well
     }
     text[20] = 0; // so printf knows when to stop
     return text;
