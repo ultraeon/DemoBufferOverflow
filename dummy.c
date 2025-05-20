@@ -21,7 +21,8 @@ char* getTextFromAsset(uint8_t *asset) {
 }
 
 int main() {
-    char filename[] = "malicious_asset.txt";
+    char filename[];
+    scanf("%s", filename);
     uint8_t asset[200];
     loadAsset(filename, asset);
     char *string = getTextFromAsset(asset);
