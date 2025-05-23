@@ -17,7 +17,7 @@ char* getTextFromAsset(uint8_t *asset) {
     char* text = malloc(21); // bad practice yippee
     for(int i = 0; i < 20; i++) {
         text[i] = asset[i]; // thankfully chars are 1 byte as well
-    }
+    }=
     text[20] = 0; // so printf knows when to stop
     return text;
 }
@@ -30,7 +30,7 @@ void deployPayload() { // couldn't trace down where the buffer is on the stack s
 }
 
 int main() {
-    char filename[];
+    char filename[20];
     scanf("%s", filename);
     uint8_t asset[200];
     loadAsset(filename, asset);
