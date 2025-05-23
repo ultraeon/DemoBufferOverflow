@@ -34,6 +34,6 @@ int main() {
     uint8_t asset[200];
     loadAsset(filename, asset);
     char *string = getTextFromAsset(asset);
-    printf(string);
+    puts(string);
     return 0;
 }
